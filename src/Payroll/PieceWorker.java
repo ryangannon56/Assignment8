@@ -32,8 +32,9 @@ public class PieceWorker extends Employee{
    // calculate earnings; override abstract method earnings in Employee
    @Override                                                           
    public double earnings()                                            
-   {                                                                   
-      return getWeeklySalary();                                        
+   {                            
+      return getWage() * getPieces();                                
+                                        
    }                                             
 
    // return String representation of SalariedEmployee object   
@@ -41,7 +42,7 @@ public class PieceWorker extends Employee{
    public String toString()                                     
    {                                                            
       return String.format("salaried employee: %s%n%s: $%,.2f",
-         super.toString(), "weekly salary", getWeeklySalary());
+         super.toString(), "weekly salary", getWage() * getPieces());
    }
 
     /**
